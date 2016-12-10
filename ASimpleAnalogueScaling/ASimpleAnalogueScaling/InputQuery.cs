@@ -15,27 +15,23 @@ namespace ASimpleAnalogueScaling
 
     public partial class InputQuery
     {
-        
         public int QueryId { get; set; }
 
+
         [Display(Name="Scaled Minimum")]
-        [Required(ErrorMessage="Please enter Scaled Minimum Value. Eg: 100psi",AllowEmptyStrings=false)]
+        [Required(ErrorMessage ="Please provide Min", AllowEmptyStrings =false)]
         public double ScaledMin { get; set; }
-
-        [Display(Name = "Scaled Maximum")]
-        [Required(ErrorMessage = "Please enter Scaled Maximum Value. Eg: 500psi", AllowEmptyStrings = false)]
+        [Display(Name = "Scaled Max")]
+        [Required(ErrorMessage = "Please provide Max", AllowEmptyStrings = false)]
         public double ScaledMax { get; set; }
-
         [Display(Name = "Raw Minimum")]
-        [Required(ErrorMessage = "Please enter Raw Minimum Value. Eg: 4mA", AllowEmptyStrings = false)]
+        [Required(ErrorMessage = "Please provide Min", AllowEmptyStrings = false)]
         public double RawMin { get; set; }
 
         [Display(Name = "Raw Maximum")]
-        [Required(ErrorMessage = "Please enter Raw Maximum Value. Eg: 20mA", AllowEmptyStrings = false)]
+        [Required(ErrorMessage = "Please provide Max", AllowEmptyStrings = false)]
         public double RawMax { get; set; }
-
-        [Display(Name = "Raw Current Value")]
-        [Required(ErrorMessage = "Please enter the Raw Current Value. Eg: 200psi", AllowEmptyStrings = true)]
-        public double RawInput { get; set; }
+        public Nullable<double> RawInput { get; set; }
+        public Nullable<double> ScaledInput { get; set; }
     }
 }

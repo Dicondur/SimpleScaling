@@ -7,10 +7,10 @@
 <h2>Calculate</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>@ViewBag.Message</h4>
         <hr />
@@ -48,12 +48,24 @@
         </div>
 
         <div class="form-group">
+            @Html.LabelFor(model => model.ScaledInput, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ScaledInput, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ScaledInput, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
             @Html.LabelFor(model => model.RawInput, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.RawInput, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.RawInput, "", new { @class = "text-danger" })
             </div>
         </div>
+
+      
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
@@ -62,11 +74,25 @@
         </div>
     </div>
 
+    <p id="result">
+        The Scaling details are as below:
+    </p>
+   
+
     <div class="form-group">
         <div class="col-md-10">
-            @ViewBag.Rate
+            <ul>
+                <li>The rate is: @ViewBag.Rate</li>
+                <li>The offset is: @ViewBag.Offset</li>
+                <li>The result for an input @ViewBag.Current is : @ViewBag.RawResult @ViewBag.ScaledResult</li>
+            </ul>
+                
         </div>
     </div>
+
+
+   
+
 }
 
 <div>

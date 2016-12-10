@@ -137,6 +137,7 @@
     <Compile Include="InputQuery.cs">
       <DependentUpon>MyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\InputQuery.cs" />
     <Compile Include="MyModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -212,9 +213,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Calculate.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />

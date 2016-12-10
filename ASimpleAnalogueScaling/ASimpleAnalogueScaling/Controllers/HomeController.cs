@@ -17,10 +17,7 @@ namespace ASimpleAnalogueScaling.Controllers
         public ActionResult Calculate()
         {
            
-            ViewBag.Message = "Given an values for Scaled Min & Max and Raw Min & Max the Scaled value for input is calculated.";
-
-            ViewBag.ScaledMin = "0";
-
+            ViewBag.Message = "Given values for Scaled Minimun & Maximum and Raw Minimum & Maximum, the Raw current value is calculated.";          
             return View();
         }
 
@@ -29,8 +26,29 @@ namespace ASimpleAnalogueScaling.Controllers
         [ValidateAntiForgeryToken]// To prevent CSRF Attack
         public ActionResult Calculate(InputQuery inputFromForm) //
         {
-           
+            ViewBag.ScaledMin = inputFromForm.ScaledMin;
+            ViewBag.ScaledMax = inputFromForm.ScaledMax;
+            ViewBag.RawMin = inputFromForm.RawMin;
+            ViewBag.RawMax = inputFromForm.RawMax;
 
+
+
+            ViewBag.Rate = inputFromForm.Rate;
+            ViewBag.Offset = inputFromForm.Offset;
+
+            
+            if (inputFromForm.RawInput != null)
+            {
+                ViewBag.Current = inputFromForm.RawInput;
+            }
+            else if (inputFromForm.ScaledInput != null)
+            {
+                ViewBag.Current = inputFromForm.ScaledInput;
+            }
+                
+
+            ViewBag.RawResult = inputFromForm.RawResult();
+            ViewBag.ScaledResult = inputFromForm.ScaledResult();
 
             if (ModelState.IsValid)
             {
