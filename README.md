@@ -1,2 +1,2 @@
 # SimpleScaling
-A simple analogue scalling
+A simple analogue scaling
