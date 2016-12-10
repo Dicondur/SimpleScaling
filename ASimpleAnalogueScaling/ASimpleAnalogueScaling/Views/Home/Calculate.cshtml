@@ -4,6 +4,10 @@
     ViewBag.Title = "Calculate";
 }
 
+
+
+
+
 <h2>Calculate</h2>
 
 
@@ -20,7 +24,9 @@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.ScaledMin, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.ScaledMin, "", new { @class = "text-danger" })
+                <span id="helpBlock" class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
             </div>
+
         </div>
 
         <div class="form-group">
