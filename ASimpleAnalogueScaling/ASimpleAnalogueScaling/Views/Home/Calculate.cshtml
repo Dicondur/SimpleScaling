@@ -1,15 +1,13 @@
-﻿@model ASimpleAnalogueScaling.Table
+﻿@model ASimpleAnalogueScaling.InputQuery
 
 @{
     ViewBag.Title = "Calculate";
-    
 }
 
-<h2>Calculate the scaling values</h2>
+<h2>Calculate</h2>
 
 
-
-@using (Html.BeginForm("Calculate","Home",FormMethod.Post)) 
+@using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
@@ -17,16 +15,6 @@
         <h4>@ViewBag.Message</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        
-
-        @*<div class="form-group">
-            @Html.LabelFor(model => model.QueryId, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.QueryId, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.QueryId, "", new { @class = "text-danger" })
-            </div>
-        </div>*@
-
         <div class="form-group">
             @Html.LabelFor(model => model.ScaledMin, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -40,22 +28,6 @@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.ScaledMax, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.ScaledMax, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.IPCurrentMin, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.IPCurrentMin, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.IPCurrentMin, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.IpCurrentMax, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.IpCurrentMax, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.IpCurrentMax, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -75,25 +47,32 @@
             </div>
         </div>
 
+        <div class="form-group">
+            @Html.LabelFor(model => model.RawInput, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.RawInput, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.RawInput, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Calculate" class="btn btn-default"></div>
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
         </div>
     </div>
 
- 
-<div class="form-group">
-    <div class="col-md-10">
-        @ViewBag.Rate
+    <div class="form-group">
+        <div class="col-md-10">
+            @ViewBag.Rate
+        </div>
     </div>
-</div>
+}
 
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
 
-}
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

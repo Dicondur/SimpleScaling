@@ -27,29 +27,19 @@ namespace ASimpleAnalogueScaling.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]// To prevent CSRF Attack
-        public ActionResult Calculate(Table inputFromForm) //
+        public ActionResult Calculate(InputQuery inputFromForm) //
         {
-            float? ScaledMin = inputFromForm.ScaledMin;
-            float? ScaledMax = inputFromForm.ScaledMax;
-            float? IPCurrentMin = inputFromForm.IPCurrentMin;
-            float? IpCurrentMax = inputFromForm.IpCurrentMax;
-            decimal? RawMin = inputFromForm.RawMin;
-            decimal? RawMax  = inputFromForm.RawMax;
-
-            
-
-
-
+           
 
 
             if (ModelState.IsValid)
             {
-                using (TempDBEntities dc = new TempDBEntities()) //Maps to Name of the App_data database created earlier
+                using (TempDBEntities1 dc = new TempDBEntities1()) //Maps to Name of the App_data database created earlier
                 {
                     
-                    ViewBag.Rate = inputFromForm.Rate;
+                    //ViewBag.Rate = inputFromForm.Rate;
 
-                    dc.Tables.Add(inputFromForm);
+                    dc.InputQueries.Add(inputFromForm);
                     dc.SaveChanges();
                 }
             }

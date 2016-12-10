@@ -13,10 +13,10 @@ namespace ASimpleAnalogueScaling
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class TempDBEntities : DbContext
+    public partial class TempDBEntities1 : DbContext
     {
-        public TempDBEntities()
-            : base("name=TempDBEntities")
+        public TempDBEntities1()
+            : base("name=TempDBEntities1")
         {
         }
     
@@ -25,6 +25,6 @@ namespace ASimpleAnalogueScaling
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Table> Tables { get; set; }
+        public virtual DbSet<InputQuery> InputQueries { get; set; }
     }
 }
