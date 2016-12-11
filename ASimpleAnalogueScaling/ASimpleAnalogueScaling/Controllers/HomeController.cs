@@ -22,6 +22,7 @@ namespace ASimpleAnalogueScaling.Controllers
         }
 
 
+        [HandleError]
         [HttpPost]
         [ValidateAntiForgeryToken]// To prevent CSRF Attack
         public ActionResult Calculate(InputQuery inputFromForm) //
