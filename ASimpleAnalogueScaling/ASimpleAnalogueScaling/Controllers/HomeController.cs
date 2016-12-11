@@ -14,10 +14,12 @@ namespace ASimpleAnalogueScaling.Controllers
             return View();
         }
 
+
+        [HandleError]
         public ActionResult Calculate()
         {
            
-            ViewBag.Message = "Given values for Scaled Minimun & Maximum and Raw Minimum & Maximum, the Raw current value is calculated.";          
+            ViewBag.Message = "Given values for Scaled Min & Max and Raw Min & Max, the Scaled/Raw current value is calculated.";          
             return View();
         }
 
