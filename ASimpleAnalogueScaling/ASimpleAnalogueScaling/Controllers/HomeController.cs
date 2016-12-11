@@ -53,21 +53,21 @@ namespace ASimpleAnalogueScaling.Controllers
             ViewBag.RawResult = inputFromForm.RawResult();
             ViewBag.ScaledResult = inputFromForm.ScaledResult();
 
-            if (ModelState.IsValid)
-            {
-                using (TempDBEntities1 dc = new TempDBEntities1()) //Maps to Name of the App_data database created earlier
-                {
+            //if (ModelState.IsValid)
+            //{
+            //    using (TempDBEntities1 dc = new TempDBEntities1()) //Maps to Name of the App_data database created earlier
+            //    {
                     
-                    //ViewBag.Rate = inputFromForm.Rate;
+            //        //ViewBag.Rate = inputFromForm.Rate;
 
-                    dc.InputQueries.Add(inputFromForm);
-                    dc.SaveChanges();
-                }
-            }
-            else
-            {
-                ViewBag.Message = "Failed! Please try again";
-            }
+            //        dc.InputQueries.Add(inputFromForm);
+            //        dc.SaveChanges();
+            //    }
+            //}
+            //else
+            //{
+            //    ViewBag.Message = "Failed! Please try again";
+            //}
 
             return View(inputFromForm);
         }
@@ -83,9 +83,13 @@ namespace ASimpleAnalogueScaling.Controllers
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Contact(string name)
         {
             ViewBag.Message = "Your contact page.";
+            if (name != null)
+            {
+                ViewBag.Message = "Hi " + name + ", thanks for leaving your email.";
+            }
 
             return View();
         }

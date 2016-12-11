@@ -15,23 +15,23 @@ namespace ASimpleAnalogueScaling
 
     public partial class InputQuery
     {
-        public int QueryId { get; set; }
+        //public int QueryId { get; set; }
 
 
-        [Display(Name="Scaled Minimum")]
-        [Required(ErrorMessage ="Please provide Min", AllowEmptyStrings =false)]
-        public double ScaledMin { get; set; }
-        [Display(Name = "Scaled Max")]
-        [Required(ErrorMessage = "Please provide Max", AllowEmptyStrings = false)]
-        public double ScaledMax { get; set; }
-        [Display(Name = "Raw Minimum")]
-        [Required(ErrorMessage = "Please provide Min", AllowEmptyStrings = false)]
-        public double RawMin { get; set; }
+        //[Display(Name="Scaled Minimum")]
+        //[Required(ErrorMessage ="Please provide Min", AllowEmptyStrings =false)]
+        //public double ScaledMin { get; set; }
+        //[Display(Name = "Scaled Max")]
+        //[Required(ErrorMessage = "Please provide Max", AllowEmptyStrings = false)]
+        //public double ScaledMax { get; set; }
+        //[Display(Name = "Raw Minimum")]
+        //[Required(ErrorMessage = "Please provide Min", AllowEmptyStrings = false)]
+        //public double RawMin { get; set; }
 
-        [Display(Name = "Raw Maximum")]
-        [Required(ErrorMessage = "Please provide Max", AllowEmptyStrings = false)]
-        public double RawMax { get; set; }
-        public Nullable<double> RawInput { get; set; }
-        public Nullable<double> ScaledInput { get; set; }
+        //[Display(Name = "Raw Maximum")]
+        //[Required(ErrorMessage = "Please provide Max", AllowEmptyStrings = false)]
+        //public double RawMax { get; set; }
+        //public Nullable<double> RawInput { get; set; }
+        //public Nullable<double> ScaledInput { get; set; }
     }
 }
