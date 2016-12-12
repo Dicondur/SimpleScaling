@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace ASimpleAnalogueScaling
+namespace ScalingApp
 {
     public class FilterConfig
     {

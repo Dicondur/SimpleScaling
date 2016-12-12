@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace ASimpleAnalogueScaling
+namespace ScalingApp
 {
     public class BundleConfig
     {

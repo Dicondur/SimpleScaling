@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 
-namespace ASimpleAnalogueScaling
+namespace ScalingApp
 {
     public partial class InputQuery
     {

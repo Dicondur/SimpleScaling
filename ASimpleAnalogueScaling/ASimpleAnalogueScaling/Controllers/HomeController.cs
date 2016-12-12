@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 
 
-namespace ASimpleAnalogueScaling.Controllers
+namespace ScalingApp.Controllers
 {
     public class HomeController : Controller
     {
