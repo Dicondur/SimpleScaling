@@ -53,6 +53,8 @@ namespace ASimpleAnalogueScaling.Controllers
             ViewBag.RawResult = inputFromForm.RawResult();
             ViewBag.ScaledResult = inputFromForm.ScaledResult();
 
+            
+
             //if (ModelState.IsValid)
             //{
             //    using (TempDBEntities1 dc = new TempDBEntities1()) //Maps to Name of the App_data database created earlier
@@ -86,6 +88,7 @@ namespace ASimpleAnalogueScaling.Controllers
         public ActionResult Contact(string name)
         {
             ViewBag.Message = "Your contact page.";
+            //ViewData["Name"] = name; //ViewData sample use @ViewData["Name"] in cshtml to view.
             if (name != null)
             {
                 ViewBag.Message = "Hi " + name + ", thanks for leaving your email.";
