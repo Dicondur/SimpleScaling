@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using ScalingApp.Models;
+//using ScalingApp.Models;
 
 namespace ScalingApp.Controllers
 {
@@ -12,10 +12,10 @@ namespace ScalingApp.Controllers
        
         public ActionResult Details(uint id)
         {
-            PartContext partcontext = new PartContext();
-            Part FirstPart = partcontext.Parts.Single(prt => prt.PartID == id); //Return first record
+            //SADBEntities partcontext = new SADBEntities();
+            //Part FirstPart = partcontext.Parts.Single(prt => prt.PartID == id); //Return first record
 
-            return View(FirstPart);
+            return View();
         }
     }
 }

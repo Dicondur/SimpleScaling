@@ -7,13 +7,14 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
+
 namespace ScalingApp
 {
     public class MvcApplication : System.Web.HttpApplication
     {
         protected void Application_Start()
         {
-            Database.SetInitializer<ScalingApp.Models.PartContext>(null); // No db Intialization
+            //Database.SetInitializer<ScalingApp.App_Data.SADBEntities>(null); // No db Intialization
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
