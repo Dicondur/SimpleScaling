@@ -91,7 +91,7 @@ namespace ASimpleAnalogueScaling.Controllers
             //ViewData["Name"] = name; //ViewData sample use @ViewData["Name"] in cshtml to view.
             if (name != null)
             {
-                ViewBag.Message = "Hi " + name + ", thanks for leaving your email.";
+                ViewBag.Message = "Hi " + name + ", thanks for leaving your name.";
             }
 
             return View();
