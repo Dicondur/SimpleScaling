@@ -12,10 +12,15 @@ namespace ScalingApp
     using System;
     using System.Collections.Generic;
     
-    public partial class Part
+    public partial class CustomerAddress
     {
-        public int PartId { get; set; }
-        public string PartName { get; set; }
-        public string PartDescription { get; set; }
+        public int CustomerID { get; set; }
+        public int AddressID { get; set; }
+        public string AddressType { get; set; }
+        public System.Guid rowguid { get; set; }
+        public System.DateTime ModifiedDate { get; set; }
+    
+        public virtual Address Address { get; set; }
+        public virtual Customer Customer { get; set; }
     }
 }

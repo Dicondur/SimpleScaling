@@ -132,32 +132,58 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Address.cs">
+      <DependentUpon>PartsModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PartsController.cs" />
+    <Compile Include="Customer.cs">
+      <DependentUpon>PartsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerAddress.cs">
+      <DependentUpon>PartsModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\InputQuery.cs" />
+    <Compile Include="Models\PartModel.cs" />
     <Compile Include="Part.cs">
-      <DependentUpon>PartModel.tt</DependentUpon>
+      <DependentUpon>PartsModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="PartModel.Context.cs">
+    <Compile Include="PartsModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PartModel.Context.tt</DependentUpon>
+      <DependentUpon>PartsModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="PartModel.cs">
+    <Compile Include="PartsModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PartModel.tt</DependentUpon>
+      <DependentUpon>PartsModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="PartModel.Designer.cs">
+    <Compile Include="PartsModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PartModel.edmx</DependentUpon>
+      <DependentUpon>PartsModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Product.cs">
+      <DependentUpon>PartsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductCategory.cs">
+      <DependentUpon>PartsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductDescription.cs">
+      <DependentUpon>PartsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductModel.cs">
+      <DependentUpon>PartsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductModelProductDescription.cs">
+      <DependentUpon>PartsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -170,6 +196,12 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="SalesOrderDetail.cs">
+      <DependentUpon>PartsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SalesOrderHeader.cs">
+      <DependentUpon>PartsModel.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -180,15 +212,15 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="PartModel.Context.tt">
+    <Content Include="PartsModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PartModel.edmx</DependentUpon>
-      <LastGenOutput>PartModel.Context.cs</LastGenOutput>
+      <DependentUpon>PartsModel.edmx</DependentUpon>
+      <LastGenOutput>PartsModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="PartModel.tt">
+    <Content Include="PartsModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PartModel.edmx</DependentUpon>
-      <LastGenOutput>PartModel.cs</LastGenOutput>
+      <DependentUpon>PartsModel.edmx</DependentUpon>
+      <LastGenOutput>PartsModel.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -200,12 +232,12 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <EntityDeploy Include="PartModel.edmx">
+    <EntityDeploy Include="PartsModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>PartModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>PartsModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="PartModel.edmx.diagram">
-      <DependentUpon>PartModel.edmx</DependentUpon>
+    <Content Include="PartsModel.edmx.diagram">
+      <DependentUpon>PartsModel.edmx</DependentUpon>
     </Content>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -253,6 +285,11 @@
     <Content Include="Views\Parts\Details.cshtml" />
     <Content Include="Views\Parts\Edit.cshtml" />
     <Content Include="Views\Parts\Index.cshtml" />
+    <Content Include="Views\Customers\Create.cshtml" />
+    <Content Include="Views\Customers\Delete.cshtml" />
+    <Content Include="Views\Customers\Details.cshtml" />
+    <Content Include="Views\Customers\Edit.cshtml" />
+    <Content Include="Views\Customers\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
