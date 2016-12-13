@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/Dicondur/SimpleScaling.png?label=ready&title=Ready)](https://waffle.io/Dicondur/SimpleScaling)
 # SimpleScaling
 A simple analogue scaling
 
