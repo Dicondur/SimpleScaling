@@ -23,6 +23,7 @@ namespace ScalingApp
 
         [Display(Name = "Raw Maximum")]
         [Required(ErrorMessage = "Please provide Max", AllowEmptyStrings = false)]
+        [Range(1,100)]
         public double RawMax { get; set; }
         public Nullable<double> RawInput { get; set; }
         public Nullable<double> ScaledInput { get; set; }
