@@ -17,7 +17,7 @@
     <AssemblyName>ScalingApp</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -132,58 +132,34 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Address.cs">
-      <DependentUpon>PartsModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PartsController.cs" />
-    <Compile Include="Customer.cs">
-      <DependentUpon>PartsModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CustomerAddress.cs">
-      <DependentUpon>PartsModel.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\InputQuery.cs" />
     <Compile Include="Models\PartModel.cs" />
-    <Compile Include="Part.cs">
-      <DependentUpon>PartsModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PartsModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PartsModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PartsModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PartsModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PartsModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PartsModel.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Product.cs">
-      <DependentUpon>PartsModel.tt</DependentUpon>
+      <DependentUpon>ProductModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="ProductCategory.cs">
-      <DependentUpon>PartsModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ProductDescription.cs">
-      <DependentUpon>PartsModel.tt</DependentUpon>
+    <Compile Include="ProductModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProductModel.Context.tt</DependentUpon>
     </Compile>
     <Compile Include="ProductModel.cs">
-      <DependentUpon>PartsModel.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProductModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="ProductModelProductDescription.cs">
-      <DependentUpon>PartsModel.tt</DependentUpon>
+    <Compile Include="ProductModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProductModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -196,11 +172,8 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="SalesOrderDetail.cs">
-      <DependentUpon>PartsModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SalesOrderHeader.cs">
-      <DependentUpon>PartsModel.tt</DependentUpon>
+    <Compile Include="UnitOfMeasure.cs">
+      <DependentUpon>ProductModel.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -212,15 +185,15 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="PartsModel.Context.tt">
+    <Content Include="ProductModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PartsModel.edmx</DependentUpon>
-      <LastGenOutput>PartsModel.Context.cs</LastGenOutput>
+      <DependentUpon>ProductModel.edmx</DependentUpon>
+      <LastGenOutput>ProductModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="PartsModel.tt">
+    <Content Include="ProductModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PartsModel.edmx</DependentUpon>
-      <LastGenOutput>PartsModel.cs</LastGenOutput>
+      <DependentUpon>ProductModel.edmx</DependentUpon>
+      <LastGenOutput>ProductModel.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -232,12 +205,12 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <EntityDeploy Include="PartsModel.edmx">
+    <EntityDeploy Include="ProductModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>PartsModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>ProductModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="PartsModel.edmx.diagram">
-      <DependentUpon>PartsModel.edmx</DependentUpon>
+    <Content Include="ProductModel.edmx.diagram">
+      <DependentUpon>ProductModel.edmx</DependentUpon>
     </Content>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -280,16 +253,11 @@
     <Content Include="Views\Home\Calculate.cshtml" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
-    <Content Include="Views\Parts\Create.cshtml" />
-    <Content Include="Views\Parts\Delete.cshtml" />
-    <Content Include="Views\Parts\Details.cshtml" />
-    <Content Include="Views\Parts\Edit.cshtml" />
-    <Content Include="Views\Parts\Index.cshtml" />
-    <Content Include="Views\Customers\Create.cshtml" />
-    <Content Include="Views\Customers\Delete.cshtml" />
-    <Content Include="Views\Customers\Details.cshtml" />
-    <Content Include="Views\Customers\Edit.cshtml" />
-    <Content Include="Views\Customers\Index.cshtml" />
+    <Content Include="Views\Products\Create.cshtml" />
+    <Content Include="Views\Products\Delete.cshtml" />
+    <Content Include="Views\Products\Details.cshtml" />
+    <Content Include="Views\Products\Edit.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -328,7 +296,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>63426</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:63426/</IISUrl>
+          <IISUrl>http://localhost/ScalingCalculator</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
