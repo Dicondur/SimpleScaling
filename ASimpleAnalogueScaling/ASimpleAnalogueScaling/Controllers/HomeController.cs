@@ -24,6 +24,16 @@ namespace ScalingApp.Controllers
         }
 
 
+        //[HandleError]
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]// To prevent CSRF Attack
+        //public ActionResult Calculate(double smin, double smax, double rmin, double rmax, double? rInp, double? sInp,out double? rRes, out double? sRes)
+        //{
+
+        //    ViewBag.Message = "Given values for Scaled Min & Max and Raw Min & Max, the Scaled/Raw current value is calculated.";
+        //    return View();
+        //}
+
         [HandleError]
         [HttpPost]
         [ValidateAntiForgeryToken]// To prevent CSRF Attack
