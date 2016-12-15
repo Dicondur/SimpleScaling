@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using ScalingApp;
+using System.Linq.Dynamic;
 
 namespace ScalingApp.Controllers
 {
@@ -15,11 +16,53 @@ namespace ScalingApp.Controllers
         private mssql7Entities db = new mssql7Entities();
 
         // GET: Products
-        public ActionResult Index()
+        public ActionResult Index(int page = 1, string sort = "Name", string sortdir = "asc", string search = "")
         {
             var products = db.Products.Include(p => p.UnitOfMeasure);
             return View(products.ToList());
+
+
+            //int pageSize = 10;
+            //int totalRecords = 0;
+
+            //if (page < 1) page = 1;
+            //int skip = (page * pageSize) - pageSize;
+            //var data = GetProducts(search, sort, sortdir, skip, pageSize, out totalRecords);
+            //ViewBag.TotalRows = totalRecords;
+            //ViewBag.search = search;
+
+            //return View(data);
         }
+
+
+
+        //get Products from DB
+
+        public List<Product> GetProducts(string search, string sort, string sortdir, int skip, int pageSize, out int totalRecords)
+        {
+            using (mssql7Entities dc = new mssql7Entities())
+            {
+                var v = (from each in dc.Products
+                         where
+                            each.Name.Contains(search) ||
+                            each.ProductDescription.Contains(search)
+                         select each);
+
+                totalRecords = v.Count();
+                //v = db.Products.Include(p => p.UnitOfMeasure);
+                
+                v = v.OrderBy(sort + " " + sortdir);
+                if (pageSize > 0)
+                {
+                    v = v.Skip(skip).Take(pageSize);
+
+                }
+
+                return v.ToList();
+            }
+        }
+
+
 
         // GET: Products/Details/5
         public ActionResult Details(int? id)

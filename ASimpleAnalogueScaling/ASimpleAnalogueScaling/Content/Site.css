@@ -22,3 +22,17 @@ select,
 textarea {
     max-width: 280px;
 }
+
+
+.pre-scrollable{
+    //margin:3px;
+    //min-height:300px;
+    background-color:#ffffff;
+    
+    overflow: auto;
+    -ms-word-wrap: normal;
+    word-wrap: normal;
+    overflow-wrap: normal;
+    //white-space: pre;
+    //max-height: 420px;
+}
