@@ -9,7 +9,7 @@ namespace ScalingApp
     public partial class InputQuery
     {
 
-        public int QueryId { get; set; }
+        //public int QueryId { get; set; }
 
         [Display(Name = "Scaled Minimum")]
         [Required(ErrorMessage = "Please provide Min", AllowEmptyStrings = false)]

@@ -38,29 +38,29 @@ namespace ScalingApp.Controllers
 
         //get Products from DB
 
-        public List<Product> GetProducts(string search, string sort, string sortdir, int skip, int pageSize, out int totalRecords)
-        {
-            using (mssql7Entities dc = new mssql7Entities())
-            {
-                var v = (from each in dc.Products
-                         where
-                            each.Name.Contains(search) ||
-                            each.ProductDescription.Contains(search)
-                         select each);
+        //public List<Product> GetProducts(string search, string sort, string sortdir, int skip, int pageSize, out int totalRecords)
+        //{
+        //    using (mssql7Entities dc = new mssql7Entities())
+        //    {
+        //        var v = (from each in dc.Products
+        //                 where
+        //                    each.Name.Contains(search) ||
+        //                    each.ProductDescription.Contains(search)
+        //                 select each);
 
-                totalRecords = v.Count();
-                //v = db.Products.Include(p => p.UnitOfMeasure);
+        //        totalRecords = v.Count();
+        //        //v = db.Products.Include(p => p.UnitOfMeasure);
                 
-                v = v.OrderBy(sort + " " + sortdir);
-                if (pageSize > 0)
-                {
-                    v = v.Skip(skip).Take(pageSize);
+        //        v = v.OrderBy(sort + " " + sortdir);
+        //        if (pageSize > 0)
+        //        {
+        //            v = v.Skip(skip).Take(pageSize);
 
-                }
+        //        }
 
-                return v.ToList();
-            }
-        }
+        //        return v.ToList();
+        //    }
+        //}
 
 
 

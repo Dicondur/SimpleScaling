@@ -7,23 +7,21 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ScalingApp
+using ScalingApp;
+using System;
+using System.Collections.Generic;
+
+public partial class UnitOfMeasure
 {
-    using System;
-    using System.Collections.Generic;
-    
-    public partial class UnitOfMeasure
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+    public UnitOfMeasure()
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public UnitOfMeasure()
-        {
-            this.Products = new HashSet<Product>();
-        }
-    
-        public int UnitMeasureCode { get; set; }
-        public string UnitOfMeasure1 { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Product> Products { get; set; }
+        this.Products = new HashSet<Product>();
     }
+
+    public int UnitMeasureCode { get; set; }
+    public string UnitOfMeasure1 { get; set; }
+
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    public virtual ICollection<Product> Products { get; set; }
 }

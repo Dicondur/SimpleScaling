@@ -7,23 +7,22 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System;
+using System.Collections.Generic;
+
 namespace ScalingApp
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
 
-    public partial class Product
-    {
-        public int ProductID { get; set; }
-        [Required]
-        [Display(Name = "Product Name")]
-        public string Name { get; set; }
-        [Display(Name = "Product Description")]
-        [StringLength(300)]
-        public string ProductDescription { get; set; }
-        public Nullable<int> UnitMeasureCode { get; set; }
-    
-        public virtual UnitOfMeasure UnitOfMeasure { get; set; }
-    }
+
+
+public partial class Product
+{
+    public int ProductID { get; set; }
+    public string Name { get; set; }
+    public string ProductDescription { get; set; }
+    public Nullable<int> UnitMeasureCode { get; set; }
+
+    public virtual UnitOfMeasure UnitOfMeasure { get; set; }
+}
+
 }

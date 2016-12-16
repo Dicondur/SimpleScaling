@@ -7,25 +7,25 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ScalingApp
+using ScalingApp;
+using System;
+using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
+
+public partial class mssql7Entities : DbContext
 {
-    using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Infrastructure;
-    
-    public partial class mssql7Entities : DbContext
+    public mssql7Entities()
+        : base("name=mssql7Entities")
     {
-        public mssql7Entities()
-            : base("name=mssql7Entities")
-        {
-        }
-    
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            throw new UnintentionalCodeFirstException();
-        }
-    
-        public virtual DbSet<Product> Products { get; set; }
-        public virtual DbSet<UnitOfMeasure> UnitOfMeasures { get; set; }
     }
+
+    protected override void OnModelCreating(DbModelBuilder modelBuilder)
+    {
+        throw new UnintentionalCodeFirstException();
+    }
+
+    public virtual DbSet<Product> Products { get; set; }
+    public virtual DbSet<UnitOfMeasure> UnitOfMeasures { get; set; }
+    public virtual DbSet<User> Users { get; set; }
+    public virtual DbSet<Person> People { get; set; }
 }

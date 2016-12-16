@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://scalingapp.gear.host" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://scalingapp.gear.host" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://scalingapp.gear.host">
+      <s:element name="CalculateService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="inputFromService" type="tns:InputQuery" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="InputQuery">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ScaledMin" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="ScaledMax" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="RawMin" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="RawMax" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="RawInput" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="ScaledInput" nillable="true" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CalculateServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CalculateServiceResult" nillable="true" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CalculateServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateService" />
+  </wsdl:message>
+  <wsdl:message name="CalculateServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateServiceResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CalculateWSSoap">
+    <wsdl:operation name="CalculateService">
+      <wsdl:input message="tns:CalculateServiceSoapIn" />
+      <wsdl:output message="tns:CalculateServiceSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CalculateWSSoap" type="tns:CalculateWSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CalculateService">
+      <soap:operation soapAction="http://scalingapp.gear.host/CalculateService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CalculateWSSoap12" type="tns:CalculateWSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CalculateService">
+      <soap12:operation soapAction="http://scalingapp.gear.host/CalculateService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CalculateWS">
+    <wsdl:port name="CalculateWSSoap" binding="tns:CalculateWSSoap">
+      <soap:address location="http://localhost/ScalingCalculator/CalculateWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CalculateWSSoap12" binding="tns:CalculateWSSoap12">
+      <soap12:address location="http://localhost/ScalingCalculator/CalculateWS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Services;
 
 
 namespace ScalingApp.Controllers
@@ -24,16 +25,8 @@ namespace ScalingApp.Controllers
         }
 
 
-        //[HandleError]
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]// To prevent CSRF Attack
-        //public ActionResult Calculate(double smin, double smax, double rmin, double rmax, double? rInp, double? sInp,out double? rRes, out double? sRes)
-        //{
-
-        //    ViewBag.Message = "Given values for Scaled Min & Max and Raw Min & Max, the Scaled/Raw current value is calculated.";
-        //    return View();
-        //}
-
+    
+        
         [HandleError]
         [HttpPost]
         [ValidateAntiForgeryToken]// To prevent CSRF Attack
@@ -63,23 +56,7 @@ namespace ScalingApp.Controllers
             ViewBag.RawResult = inputFromForm.RawResult();
             ViewBag.ScaledResult = inputFromForm.ScaledResult();
 
-            
-
-            //if (ModelState.IsValid)
-            //{
-            //    using (TempDBEntities1 dc = new TempDBEntities1()) //Maps to Name of the App_data database created earlier
-            //    {
-                    
-            //        //ViewBag.Rate = inputFromForm.Rate;
-
-            //        dc.InputQueries.Add(inputFromForm);
-            //        dc.SaveChanges();
-            //    }
-            //}
-            //else
-            //{
-            //    ViewBag.Message = "Failed! Please try again";
-            //}
+        
 
             return View(inputFromForm);
         }
